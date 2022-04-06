@@ -1,14 +1,12 @@
 import random
 import turtle
-import time
-import math
 
 turtle.hideturtle()
 turtle.speed("fastest")
 turtle.color("blue")
 turtle.tracer(0, 0)
 
-points = [[0, 0], [400, 0], [200, 296]]
+points = [[-400, -300], [400, -300], [0, 292]]
 
 def dot():
     turtle.forward(1)
@@ -29,11 +27,11 @@ def newPoint():
     ran = random.randint(1, 3)
 
     if(ran == 1):
-        point = [0, 0]
+        point = [-400, -300]
     if(ran == 2):
-        point = [400, 0]
+        point = [400, -300]
     if(ran == 3):
-        point = [200, 296]
+        point = [0, 292]
     return point
 
 def getMid(p1,p2):
@@ -49,10 +47,10 @@ def draw():
     turtle.down()
     dot()
 
-for x in range(0, 50000):
+for x in range(0, 10000):
     draw()
     print(x)
 
 window = turtle.Screen()
-window.setup(width = 1.0, height = 1.0)
+window.setup(width=1.0, height=1.0)
 window.exitonclick()
