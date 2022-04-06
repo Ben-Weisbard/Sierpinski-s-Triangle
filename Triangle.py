@@ -4,13 +4,19 @@ import time
 import math
 
 turtle.hideturtle()
-turtle.speed(10)
+turtle.speed("fastest")
 turtle.color("blue")
+turtle.tracer(0, 0)
 
 points = [[0, 0], [100, 0], [50, 74]]
 
 def dot():
     turtle.forward(1)
+    turtle.up()
+    turtle.left(180)
+    turtle.forward(1)
+    turtle.left(180)
+    turtle.down()
 
 for x in range(0, 3):
     turtle.up()
@@ -26,7 +32,7 @@ def newPoint():
         point = [0, 0]
     if(ran == 2):
         point = [100, 0]
-    else:
+    if(ran == 3):
         point = [50, 74]
     return point
 
@@ -45,6 +51,7 @@ def draw():
 
 for x in range(0, 2000):
     draw()
+    print(x)
 
 window = turtle.Screen()
 window.exitonclick()
